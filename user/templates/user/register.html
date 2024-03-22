@@ -1,0 +1,35 @@
+{% extends 'Blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="card">
+    <div class="card-header">      
+      <h4>Join Now</h4>
+    </div>
+    <div class="card-body">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form|crispy}}
+            <button class="btn btn-primary" type="submit">Sing Up</button>                       
+        </form>
+        <div class="pt-3">
+            <small class="text-muted">
+                Already Have An Account? <a class="ml-2" href="#">Sing In</a>
+            </small>
+        </div>      
+    </div>
+  </div>
+
+    <!-- <h1>register!</h1>
+    <div>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form|crispy}}
+            <br/>
+            <button type="submit">Sing Up</button>
+        </form>
+        <div>
+            <p>If you already register? <a href="#">Sing In</a></p>
+        </div>
+    </div> -->
+{% endblock content %}
