@@ -15,8 +15,15 @@
             </ul>
             <!-- <form class="d-flex" role="search"> -->
             <div class="navbar-nav">
-              <a class="nav-item nav-link" href="#">Login</a>
-              <a class="nav-item nav-link" href="{% url 'user-register' %}">Register</a>
+              {% if user.is_authenticated %}
+              <form id="frm_logout" method="post" action="{% url 'logout' %}">     
+                {% csrf_token %}     
+                <a  href="javascript:$('#frm_logout').submit();" class="nav-item nav-link">Logout</a> 
+              </form>
+              {% else %}
+                <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                <a class="nav-item nav-link" href="{% url 'user-register' %}">Register</a>
+              {% endif %}
             </div>
           
             <!-- </form> -->
