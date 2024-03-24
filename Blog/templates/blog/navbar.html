@@ -20,6 +20,7 @@
                 {% csrf_token %}     
                 <a  href="javascript:$('#frm_logout').submit();" class="nav-item nav-link">Logout</a> 
               </form>
+              <a  href="{% url 'user-profile' %}" class="nav-item nav-link">Profile</a> 
               {% else %}
                 <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
                 <a class="nav-item nav-link" href="{% url 'user-register' %}">Register</a>
