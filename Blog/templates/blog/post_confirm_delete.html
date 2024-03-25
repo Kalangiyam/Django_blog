@@ -1,0 +1,16 @@
+{% extends 'Blog/base.html' %}
+{% block content %}
+<div class="card content-section">
+    <div >      
+      <h4>Delete Post</h4>
+      <h6>Are you sure want to delete the post "{{object.title}}"</h6>
+    </div>
+    <div class="">
+      <form action="" method="POST">
+        {% csrf_token %}            
+        <button class="btn btn-danger btn-sm mt-3 mb-1" type="submit">Yes, Delete</button>                       
+        <a class="btn btn-secondary btn-sm mt-3 mb-1" href="{% url 'post-detail' object.pk %}">Cancel</a>                       
+      </form>            
+    </div>
+  </div>    
+{% endblock content %}
